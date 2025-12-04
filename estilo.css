@@ -284,7 +284,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('img/fotoInicio1.jpg'); 
+    background-image: url('img/fotoInicio.jpg'); 
     background-size: cover;       /* Ajusta sin deformar */
     background-position: center;
     background-attachment: fixed; /* El truco: la foto se queda quieta */
@@ -671,4 +671,5 @@ header .menu-boda-movil .slideMenu .menu-principal a {
 @keyframes aparecerSuave {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+
 }
