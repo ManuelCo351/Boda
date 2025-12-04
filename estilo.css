@@ -91,16 +91,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 5; 
-    
-    /* EL TRUCO DE MAGIA: */
-    /* Esto permite que la gente pueda dar click al botón de abajo 
-       aunque el marco esté encima */
     pointer-events: none; 
-    
-    /* Ajuste visual (opcional) */
-    /* Si el marco no encaja perfecto con la curva de arriba, */
-    /* puedes bajarlo un poquito: */
-    /* top: 20px; height: 95%; */
 }
 .card-body::before {
     content: "";
@@ -120,8 +111,9 @@ body {
 /* ----------------------------------------------------- */
 .ornament {
     width: 250px;
-    height: 90px;
-    margin: -30px auto 20px auto; /* Ajuste para que quede cerca de la curva */
+    height: 60px;
+    top: 20px;
+    margin: 80px auto 10px auto;
     position: relative;
     z-index: 20;
     background-image: url('img/anillos.png');
@@ -150,10 +142,13 @@ body {
 /* 4. TIPOGRAFÍA Y DETALLES                              */
 /* ----------------------------------------------------- */
 .invite-text {
+    top: -50px;
     font-size: 0.75rem;
     letter-spacing: 3px;
     color: #888;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    z-index: 90; 
 }
 .names {
     font-family: 'Parisienne';
@@ -357,6 +352,135 @@ header .menu-boda-movil .slideMenu .menu-principal a {
         left: 0;
     }
 }
+
+/* ========================================= */
+/* === SECCIÓN HORARIOS (TIMELINE)       === */
+/* ========================================= */
+
+.seccion-horarios {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.titulo-seccion h2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 3.5rem;
+    color: #bfa373;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+    color: #888;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+/* CONTENEDOR DE LA LÍNEA */
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    /* Esto crea la línea vertical central */
+    border-left: 2px solid #e0e0e0; 
+    margin-left: 50%; /* Centramos la línea en la pantalla */
+    padding-left: 30px; /* Espacio entre línea y contenido */
+    padding-bottom: 20px;
+}
+
+/* CADA EVENTO */
+.evento {
+    position: relative;
+    margin-bottom: 60px; /* Espacio entre eventos */
+    text-align: left; /* El texto va alineado a la izquierda de la línea */
+}
+
+/* LA HORA (A la izquierda de la línea) */
+.hora {
+    position: absolute;
+    left: -140px; /* Lo movemos a la izquierda de la línea */
+    top: 0;
+    width: 100px;
+    text-align: right; /* Alineado a la derecha para pegarse a la línea */
+    font-family: 'Cormorant Garamond', serif; /* Tu fuente elegante */
+    font-weight: bold;
+    color: #bfa373;
+    font-size: 1.2rem;
+}
+
+/* EL ÍCONO (El círculo sobre la línea) */
+.icono-timeline {
+    position: absolute;
+    left: -51px; /* Ajuste preciso para centrarlo en la línea (-30 padding -21 mitad icono) */
+    top: -5px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff; /* Fondo blanco para tapar la línea */
+    border: 2px solid #bfa373; /* Borde dorado */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bfa373; /* Color del icono SVG */
+    z-index: 2;
+}
+
+/* TEXTOS DEL EVENTO */
+.info-evento h3 {
+    margin: 0 0 5px 0;
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.info-evento p {
+    margin: 0;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* DRESS CODE AL FINAL */
+.dress-code {
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    display: inline-block;
+}
+.dress-code p {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #444;
+}
+
+/* === RESPONSIVE (Móvil) === */
+/* En celular la línea al medio a veces molesta, la movemos a la izquierda */
+@media (max-width: 600px) {
+    .timeline {
+        margin-left: 20px; /* Línea pegada a la izquierda */
+        border-left: 2px solid #e0e0e0;
+    }
+    
+    .hora {
+        position: relative; /* Ya no flota a la izquierda */
+        left: 0;
+        text-align: left;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    .icono-timeline {
+        left: -51px; /* Mismo ajuste */
+    }
+    
+    /* Pequeño truco visual para móvil */
+    .evento {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+    }
+}
 /* ========================================= */
 /* === SECCIÓN LOCALIZACIÓN (TABS MAPAS) === */
 /* ========================================= */
@@ -386,7 +510,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
 }
 .encabezado li a {
     text-decoration: none;
-    font-family: 'Poppins', sans-serif; /* Tu fuente de texto */
+    font-family: 'Cormorant Garamond', sans-serif; /* Tu fuente de texto */
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -461,7 +585,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     text-align: center;
 }
 .titulo-final h2 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Parisienne', cursive;
     font-size: 3.5rem;
     color: #bfa373; /* Tu dorado */
     margin-bottom: 10px;
@@ -726,6 +850,5 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     to { opacity: 1; transform: translateY(0); }
 
 }
-
 
 
