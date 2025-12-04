@@ -84,7 +84,24 @@ body {
     margin-top: -80px; /* IMPORTANTE: Subimos el cuerpo para que tape la foto */
     z-index: 10;
 }
-
+.marco-interno {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; 
+    
+    /* EL TRUCO DE MAGIA: */
+    /* Esto permite que la gente pueda dar click al botón de abajo 
+       aunque el marco esté encima */
+    pointer-events: none; 
+    
+    /* Ajuste visual (opcional) */
+    /* Si el marco no encaja perfecto con la curva de arriba, */
+    /* puedes bajarlo un poquito: */
+    /* top: 20px; height: 95%; */
+}
 .card-body::before {
     content: "";
     position: absolute;
@@ -673,4 +690,5 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     to { opacity: 1; transform: translateY(0); }
 
 }
+
 
