@@ -1,0 +1,674 @@
+
+/* ------------------------------------------- */
+/* 1. ESTILOS GENERALES Y LAYOUT BASE          */
+/* ------------------------------------------- */
+html {
+    overflow-x: hidden;
+}
+:root {
+    --gold: #bfa373;
+    --dark-text: #4a4a4a;
+    --bg-color: #f0f0f0;
+}
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+      overflow-x: hidden; 
+    /* Cambiamos 80vh a 100vh para asegurar pantalla completa */
+    min-height: 100vh; 
+    background-image: linear-gradient(to right, #ffe5e5, #fffafa, #ffe5e5);
+    font-family: 'Cormorant Garamond', sans-serif
+}
+/* EL CONTENEDOR MÁGICO */
+.contenedor {
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; 
+    background-image: linear-gradient(to right, #ffe5e5, #fffafa, #ffe5e5);
+}
+.card {
+    width: 500px;
+    max-width: 90%;
+    background-color: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Sombra profunda para toda la tarjeta */
+    position: relative;/* Mantiene todo contenido */
+}
+/* ----------------------------------------------------- */
+/* 1. IMAGEN DE FONDO (Desde CSS)                        */
+/* ----------------------------------------------------- */
+.card-header {
+    height: 600px; /* Altura de la foto */
+    width: 100%;
+    /* REEMPLAZA ESTO CON LA URL DE TU FOTO DE ANILLOS */
+    background-image: url('img/fotocompleta.png'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+}
+/* ========================================= */
+/* === Estilos para las flores esquineras === */
+/* ========================================= */
+.esquinera {
+    position: absolute;
+    width: 220px;  
+    height: auto; 
+    z-index: 50; 
+    pointer-events: none; 
+}
+.esq-top-left {
+    bottom: 50%;
+    left: -5%;
+}
+.esq-bottom-right {
+    bottom: 50%;
+    right: -5%;
+    /* Truco de diseño: Rotamos la imagen de abajo 180 grados 
+       para que se vea simétrica con la de arriba */
+    
+}
+/* ----------------------------------------------------- */
+/* 2. EL CUERPO Y EL RELIEVE (La forma curva superior)   */
+/* ----------------------------------------------------- */
+.card-body {
+    position: relative;
+    background-color: #fff;
+    padding: 0 40px 50px 40px;
+    text-align: center;
+    margin-top: -80px; /* IMPORTANTE: Subimos el cuerpo para que tape la foto */
+    z-index: 10;
+}
+
+.card-body::before {
+    content: "";
+    position: absolute;
+    top: -49px; /* Posicionamos justo encima del inicio del blanco */
+    left: 0;
+    width: 100%;
+    height: 50px; /* Altura de la curva */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0,100 L0,50 C150,50 200,20 280,20 C360,20 400,60 500,60 C600,60 640,20 720,20 C800,20 850,50 1000,50 L1000,100 Z'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 -5px 6px rgba(0,0,0,0.3)); 
+    z-index: 1; 
+}
+/* ----------------------------------------------------- */
+/* 3. ADORNO FLORAL (Desde CSS)                          */
+/* ----------------------------------------------------- */
+.ornament {
+    width: 250px;
+    height: 90px;
+    margin: -30px auto 20px auto; /* Ajuste para que quede cerca de la curva */
+    position: relative;
+    z-index: 20;
+    background-image: url('img/anillos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ornament2 {
+    width: 100%;
+    height: 150px;
+    margin: -30px auto 20px auto; 
+    position: relative;
+    z-index: 200; /* Muy importante: para que esté por encima de todo y se pueda clickear */
+    cursor: pointer;
+    background-image: url('img/adorno1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: palpito 2s infinite; 
+    transition: transform 0.3s ease; /* Suavidad para el efecto hover */
+}
+.ornament2:hover {
+    transform: scale(1.1);
+}
+/* ----------------------------------------------------- */
+/* 4. TIPOGRAFÍA Y DETALLES                              */
+/* ----------------------------------------------------- */
+.invite-text {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 10px;
+}
+.names {
+    font-family: 'Great Vibes';
+    font-size: 4rem;
+    color: var(--gold);
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 400;
+}
+.separator-line {
+    height: 1px;
+    width: 60px;
+    background-color: var(--gold);
+    margin: 20px auto;
+}
+.date-time {
+    margin: 25px 0;
+    color: var(--gold);
+}
+.date {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.time {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.location {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+.rsvp {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 0.85rem;
+}
+.text-button{
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888; 
+    margin-top: -50px;
+}
+/* ==================================== */
+/* === SECCION DETALLE     === */
+/* ==================================== */
+.oculto{
+    display: none;
+}
+/* ======================== */
+/* ESTILOS MENU PC          */
+/* ======================== */
+header .menu-boda-pc {
+    opacity: 20;
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center; /* Esto centra todo el contenido horizontalmente */
+    align-items: center;
+    opacity: 1;
+    min-height: 6rem;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+header .menu-boda-pc .menu-principal a {
+    text-decoration: none;
+    color: #333;
+    padding: 0 1.5rem; /* Espacio entre palabras */
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+header .menu-boda-pc .menu-principal a:hover {
+    color: #bfa373; /* Un color dorado al pasar el mouse */
+}
+/* ======================== */
+/* ESTILOS MENU MÓVIL       */
+/* ======================== */
+header .menu-boda-movil {
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    padding: 0 1.5rem;
+    display: none; 
+    justify-content: space-between; /* Icono a la izquierda o extremos */
+    align-items: center;
+    min-height: 4rem;
+    border-bottom: 1px solid #eaeaea;
+}
+header .menu-boda-movil .burger-menu {
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+header .menu-boda-movil .slideMenu {
+    position: fixed;
+    top: 4rem;
+    left: -100%; 
+    background: #fff;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    transition: left 0.3s ease; 
+    border-top: 1px solid #eaeaea;
+}
+header .menu-boda-movil .slideMenu.active {
+    left: 0;
+}
+header .menu-boda-movil .slideMenu .menu-principal a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+/* ========================================= */
+/* === SECCIÓN INICIO (EFECTO ESCÁNER)   === */
+/* ========================================= */
+.inicio-escaneo {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/fotoInicio1.jpg'); 
+    background-size: cover;       /* Ajusta sin deformar */
+    background-position: center;
+    background-attachment: fixed; /* El truco: la foto se queda quieta */
+    background-repeat: no-repeat;
+}
+.inicio-escaneo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;      /* Ancho del haz de luz */
+    height: 100%;
+    background-image: url('img/fotoInicio1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(1.3) contrast(1.1) saturate(1.2);
+    box-shadow: 
+        5px 0 20px rgba(0,0,0,0.3),
+        -5px 0 20px rgba(0,0,0,0.3);  
+    border-left: 1px solid rgba(255,255,255,0.4);
+    border-right: 1px solid rgba(255,255,255,0.4);
+    animation: escanear 6s ease-in-out infinite;
+    z-index: 1; /* Por encima del fondo, pero debajo del texto */
+}
+.contenido-titulo {
+    position: relative;
+    z-index: 10; /* Muy alto para que el haz de luz pase por DETRÁS */
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra negra fuerte para leerse */
+}
+.contenido-titulo h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin: 0;
+}
+.contenido-titulo p {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+@keyframes escanear {
+    0% {
+        left: 0;
+    }
+    50% {
+            left: 80%; 
+    }
+    100% {
+        left: 0;
+    }
+}
+/* ========================================= */
+/* === SECCIÓN LOCALIZACIÓN (TABS MAPAS) === */
+/* ========================================= */
+.seccion-boda {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center; /* Centra textos y botones */
+}
+.seccion-boda h2 {
+    font-family: 'Great Vibes', cursive; /* O tu fuente de títulos */
+    font-size: 3rem;
+    color: #bfa373; /* Tu color dorado */
+    margin-bottom: 30px;
+}
+.contenedor-menu {
+    max-width: 800px;
+    margin: 0 auto; /* Centrado horizontal */
+}
+.encabezado {
+    list-style: none; /* Quita los puntos de lista */
+    padding: 0;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* Espacio entre botones */
+    border-bottom: 1px solid #eee; /* Línea gris suave abajo */
+}
+.encabezado li a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif; /* Tu fuente de texto */
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888; /* Color gris apagado */
+    padding: 10px 20px;
+    display: block;
+    border-bottom: 3px solid transparent; /* Borde invisible */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.encabezado li a:hover {
+    color: #bfa373;
+}
+.encabezado li.active a {
+    color: #bfa373; /* Color dorado */
+    border-bottom: 3px solid #bfa373; /* Línea dorada abajo */
+    font-weight: bold;
+}
+.contenido {
+    /* Efecto de borde doble elegante alrededor del mapa */
+    border: 4px double #eee; 
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+.contenido > div {
+    display: none;
+    animation: aparecerSuave 0.5s ease; /* Animación de entrada */
+}
+.contenido > div.active {
+    display: block;
+}
+.mapa-responsive {
+    position: relative;
+    overflow: hidden;
+    /* Este porcentaje (56.25%) crea una proporción 16:9 perfecta */
+    padding-bottom: 56.25%; 
+    height: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.mapa-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.boton-llegar {
+    display: inline-block;
+    background-color: #bfa373;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.boton-llegar:hover {
+    background-color: #a38b63;
+    transform: translateY(-2px); /* Se levanta un poquito */
+}
+/* ========================================= */
+/* === SECCIÓN FINAL (CONTACTO Y EXTRAS) === */
+/* ========================================= */
+.seccion-extras {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* Un gris muy clarito para diferenciar del fondo blanco */
+    text-align: center;
+}
+.titulo-final h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #bfa373; /* Tu dorado */
+    margin-bottom: 10px;
+}
+.titulo-final p {
+    color: #666;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.contenedor-cards {
+    display: flex;
+    flex-wrap: wrap; /* Para que bajen en celular */
+    justify-content: center;
+    gap: 30px; /* Espacio entre tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card-extra {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    width: 300px; /* Ancho fijo para PC */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+.card-extra:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(191, 163, 115, 0.2); /* Sombra dorada suave */
+}
+.icono-extra {
+    color: #bfa373; /* Color dorado */
+    margin-bottom: 20px;
+}
+.card-extra h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.card-extra p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.btn-accion {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #bfa373;
+    color: #bfa373;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.btn-accion:hover {
+    background-color: #bfa373;
+    color: #fff;
+}
+/* ==================================== */
+/* === EL CONTADOR (Fijo Abajo)     === */
+/* ==================================== */
+.contador {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 380px; 
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50; 
+}
+.contacion { 
+    font-size: 1.2rem; 
+    font-weight: 500; 
+    margin: 0 0 10px 0; 
+}
+.cont { 
+    display: flex; 
+    justify-content: space-around; 
+    text-align: center; 
+    width: 100% ; 
+}
+.cont div span { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+}
+.cont div p { 
+    font-size: 0.8rem; 
+    margin-top: 2px; 
+}
+/* ==================================== */
+/* === Musica   === */
+/* ==================================== */
+.caja-musica {
+    position: fixed;
+    top: 20px;       /* Ubicación: Arriba */
+    right: 20px;     /* Ubicación: Derecha */
+    width: 40px;
+    height: 40px;
+    background-color: #d1efff; /* Celeste clarito sutil */
+    border-radius: 8px; /* Bordes un poco redondeados (cuadrado suave) */
+    display: none; /* Empieza oculto (se muestra al abrir la invitación) */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* Siempre encima de todo */
+    transition: all 0.3s ease;
+    opacity: 0.8; /* Un poco transparente para ser sutil */
+}
+.caja-musica:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.caja-musica.sonando #icono-musica {
+    animation: bailarin 1s infinite alternate;
+}
+.caja-musica.pausado {
+    background-color: #f0f0f0;
+    filter: grayscale(100%);
+}
+/* ============================================== */
+/* === RESPONSIVIDAD (Versión Móvil)          === */
+/* ============================================== */
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 95%; /* Ocupa casi todo el ancho */
+        margin: 10px auto; /* Un poco de margen arriba */
+    }
+    .card-header {
+        height: 350px; /* Bajamos de 400px a 250px para ver contenido antes */
+    }
+    .card-body {
+        padding: 0 20px 140px 20px; /* Menos padding a los lados, MÁS abajo por el contador */
+        margin-top: -60px; /* Ajustamos la subida para la nueva altura de foto */
+    }
+    .names {
+        font-size: 2.8rem; /* Bajamos el tamaño para que entren en una línea o dos */
+        margin-top: 10px;
+    }
+    .invite-text {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+    .location, .rsvp {
+        font-size: 0.85rem;
+    }
+    .esquinera {
+        width: 100px; /* En escritorio eran 80px */
+    }
+    .cont div span {
+        font-size: 1.2rem;
+    }
+    .cont div p {
+        font-size: 0.7rem;
+    }
+    .contacion {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .inicio-escaneo::before {
+        width: 35%; /* Barra más ancha en celular para que se note */
+    }
+    .contenido-titulo h1 {
+        font-size: 3rem;
+    }
+    .encabezado li a {
+        font-size: 0.8rem; /* Letra más chica en celular */
+        padding: 10px 10px;
+    }
+    .seccion-boda {
+        padding: 40px 10px; /* Menos relleno en los bordes */
+    }
+}
+@media only screen and (max-width: 768px) {
+    header .menu-boda-pc {
+        display: none;
+    } 
+    /* Mostramos Móvil con Flex */
+    header .menu-boda-movil {
+        display: flex;
+    }
+    .card-extra {
+        width: 100%; /* En celular ocupan todo el ancho */
+        max-width: 350px;
+    }
+}
+@keyframes palpito {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } /* Un movimiento sutil */
+    100% { transform: scale(1); }
+}
+@keyframes bailarin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+@keyframes animate {
+  0%, 100% {
+    left: 0;
+  }
+  50% {
+   
+    left: calc(100% - 20%); 
+  }
+}    
+@keyframes escanear {
+        0%, 100% { left: 0; }
+        50% { left: 65%; } /* Ajustado al nuevo ancho */
+    }
+@keyframes aparecerSuave {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
