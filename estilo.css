@@ -530,41 +530,77 @@ header .menu-boda-movil .slideMenu .menu-principal a {
 /* ==================================== */
 /* === EL CONTADOR (Fijo Abajo)     === */
 /* ==================================== */
+/* ==================================== */
+/* === EL CONTADOR (Estilo Cajas)   === */
+/* ==================================== */
+
 .contador {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 100%;
-    max-width: 380px; 
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(5px);
-    border-radius: 10px 10px 0 0;
-    padding: 10px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    
+    /* Fondo blanco casi opaco para que se lean bien los números */
+    background: rgba(255, 255, 255, 0.95); 
+    
+    /* Línea dorada arriba para separarlo de la web */
+    border-top: 3px solid #bfa373; 
+    
+    padding: 10px 0; /* Un poco de aire arriba y abajo */
+    
+    /* Sombra para que parezca flotar sobre el mapa/contenido */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1); 
+    
+    z-index: 200; /* Siempre encima de todo */
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 50; 
 }
-.contacion { 
-    font-size: 1.2rem; 
-    font-weight: 500; 
-    margin: 0 0 10px 0; 
+
+/* El título "Faltan:" */
+.contacion {
+    font-family: 'Parisienne', cursive; /* Tu tipografía elegante */
+    font-size: 1.5rem;
+    color: #bfa373; /* Dorado */
+    margin: 0 0 5px 0;
+    font-weight: normal;
 }
-.cont { 
-    display: flex; 
-    justify-content: space-around; 
-    text-align: center; 
-    width: 100% ; 
+
+/* El contenedor de las cajitas */
+.cont {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre cada cajita */
 }
-.cont div span { 
-    font-size: 1.5rem; 
-    font-weight: 700; 
+
+/* CADA CAJITA (Días, Horas, etc.) */
+.cont div {
+    /* Aquí está el "Marco" que pidió el cliente */
+    border: 1px solid #bfa373; 
+    border-radius: 5px; /* Bordes redondeados suavemente */
+    background-color: #fff; /* Fondo blanco limpio */
+    
+    width: 65px; /* Ancho fijo para que todas sean iguales */
+    padding: 5px 0;
+    text-align: center;
 }
-.cont div p { 
-    font-size: 0.8rem; 
-    margin-top: 2px; 
+
+/* Los Números */
+.cont div span {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4a4a4a; /* Gris oscuro para leerse bien */
+}
+
+/* Las palabras (Días, Horas...) */
+.cont div p {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #bfa373; /* Dorado */
+    margin: 2px 0 0 0;
+    letter-spacing: 1px;
 }
 /* ==================================== */
 /* === Musica   === */
@@ -690,5 +726,6 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     to { opacity: 1; transform: translateY(0); }
 
 }
+
 
 
