@@ -441,19 +441,51 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     font-size: 0.95rem;
 }
 
-/* DRESS CODE AL FINAL */
-.dress-code {
-    margin-top: 20px;
-    padding-top: 30px;
-    border-top: 1px solid #eee;
-    display: inline-block;
-}
-.dress-code p {
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #444;
+.dress-code-box {
+    margin-top: 60px;
+    padding: 30px;
+    background-color: #fafafa; /* Fondo gris muy muy clarito */
+    border-radius: 15px;
+    display: inline-block; /* Para que la caja se ajuste al contenido */
+    min-width: 300px;
+    border: 1px dashed #dcdcdc; /* Un borde punteado sutil */
+    transition: transform 0.3s ease;
 }
 
+.dress-code-box:hover {
+    transform: translateY(-5px); /* Pequeño movimiento al pasar el mouse */
+    border-color: #bfa373;
+}
+
+.icono-dress {
+    color: #bfa373; /* Tu dorado */
+    margin-bottom: 10px;
+}
+
+.dress-code-box h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #bfa373;
+    margin: 0 0 5px 0;
+    font-weight: normal;
+}
+
+.dress-code-box .estilo {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.dress-code-box .nota {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+    font-style: italic;
+}
 /* === RESPONSIVE (Móvil) === */
 /* En celular la línea al medio a veces molesta, la movemos a la izquierda */
 @media (max-width: 600px) {
@@ -850,5 +882,6 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     to { opacity: 1; transform: translateY(0); }
 
 }
+
 
 
