@@ -1,3 +1,4 @@
+onclick="this.classList.toggle('is-flipped')"
                             // Métodos de menu movil    
 var propMenu = {
     burger_menu: document.getElementById('burger_menu'),
@@ -166,3 +167,4 @@ function controlarMusica() {
             segundosSpan.innerHTML = "00";
         }
     }, 1000);
+
