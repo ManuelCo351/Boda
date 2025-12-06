@@ -44,16 +44,12 @@ Este momento de nuestras vidas es inmensamente especial. Pero sabemos que compar
         </div> </div> </div> ```
 
 <div id="seccion-detalle" class="oculto">           
-  
-    <!-- ==================================== -->
-    <!-- === EL CONTADOR (Fijo Abajo)     === -->
-    <!-- ==================================== -->
 <!-- Encabezado -->
 <header>
     <div class="menu-boda-pc">
         <nav class="menu-principal">
             <a href="#inicio">Inicio</a>
-            <a href="#nuestraHitoria">Nuestra Historia</a>
+            <a href="#hitoria">Nuestra Historia</a>
             <a href="#localizacion">¿Como llegar?</a>
             <a href="#horarios">Horarios</a>
             <a href="#contacto">Confirmación</a>
@@ -85,6 +81,69 @@ Este momento de nuestras vidas es inmensamente especial. Pero sabemos que compar
     </div>
 </section>
 <!--inicio-->
+<!--historia-->
+    <section id="historia" class="seccion-historia">
+    
+    <div class="titulo-seccion">
+        <h2>Nuestra Historia</h2>
+        <p>Pequeños momentos de una gran aventura</p>
+    </div>
+
+    <div class="galeria-grid">
+
+        <div class="photo-card-container" onclick="this.classList.toggle('is-flipped')">
+            <div class="photo-card">
+                
+                <div class="card-face face-front">
+                    <img src="img/historia1.jpg" alt="Foto novios 1">
+                    <div class="icono-toque">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg>
+                    </div>
+                </div>
+                
+                <div class="card-face face-back">
+                    <img src="img/historia1.jpg" alt="Foto novios 1 borrosa" class="img-bg">
+                    <div class="contenido-back">
+                        <h3>El primer viaje</h3>
+                        <p>"Donde descubrimos que viajar juntos es nuestro estado natural."</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="photo-card-container" onclick="this.classList.toggle('is-flipped')">
+            <div class="photo-card">
+                <div class="card-face face-front">
+                    <img src="img/historia2.jpg" alt="Foto novios 2">
+                    <div class="icono-toque"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg></div>
+                </div>
+                <div class="card-face face-back">
+                     <img src="img/historia2.jpg" alt="Foto novios 2 borrosa" class="img-bg">
+                    <div class="contenido-back">
+                        <h3>La propuesta</h3>
+                        <p>"Entre nervios y risas, el 'sí' más fácil de mi vida."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="photo-card-container" onclick="this.classList.toggle('is-flipped')">
+            <div class="photo-card">
+                <div class="card-face face-front">
+                    <img src="img/historia3.jpg" alt="Foto novios 3">
+                    <div class="icono-toque"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg></div>
+                </div>
+                <div class="card-face face-back">
+                    <img src="img/historia3.jpg" alt="Foto novios 3 borrosa" class="img-bg">
+                    <div class="contenido-back">
+                        <h3>Nuestro hogar</h3>
+                        <p>"Construyendo sueños y recuerdos en nuestro lugar en el mundo."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         </div> </section>
+<!--historia-->
+
 <section id="horarios" class="seccion-horarios">
     
     <div class="titulo-seccion">
@@ -265,14 +324,12 @@ Este momento de nuestras vidas es inmensamente especial. Pero sabemos que compar
     </div>
 
 </div>
-    <!-- ==================================== -->
-    <!-- === EL SCRIPT (Actualizado)      === -->
-    <!-- ==================================== -->
     <script src="script.js"></script>
 
 </body>
 
 </html>
+
 
 
 
