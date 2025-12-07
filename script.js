@@ -132,7 +132,7 @@ function controlarMusica() {
     });
 
                         //contador funcional
-    const fechaBoda = new Date("Dec 21, 2025 20:00:00").getTime();
+    const fechaBoda = new Date("Dec 29, 2025 10:00:00").getTime();
 
     // Seleccionamos los 'spans' donde irán los números
     const diasSpan = document.getElementById("dias");
@@ -167,4 +167,5 @@ function controlarMusica() {
             segundosSpan.innerHTML = "00";
         }
     }, 1000);
+
 
