@@ -147,15 +147,19 @@ body {
     margin: 25px 0;
     color: var(--gold);
     font-family: 'Parisienne', sans-serif;
+}
+.time {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.date {
     display: block;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 5px;
-
 }
-
-
 .location {
     font-size: 0.9rem;
     line-height: 1.6;
@@ -1021,6 +1025,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     to { opacity: 1; transform: translateY(0); }
 
 }
+
 
 
 
