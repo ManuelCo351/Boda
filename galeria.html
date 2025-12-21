@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos - Boda</title>
+    
+    <link rel="stylesheet" href="estilosg.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="galeria-body">
+
+    <a href="index.html" class="btn-volver-flotante">
+        <span>⬅</span> Volver a la Invitación
+    </a>
+
+    <header class="galeria-cover">
+        <img src="img/album.jpeg" alt="Portada Novios" class="img-portada">
+        <div class="cover-overlay">
+            <h1 class="titulo-elegante">Nuestros Recuerdos</h1>
+            <p class="subtitulo-elegante">La boda vista a través de tus ojos</p>
+        </div>
+    </header>
+
+    <section class="seccion-carrusel scroll-reveal">
+        <div class="intro-texto">
+            <h2>Últimos momentos</h2>
+            <p>Lo que está pasando ahora mismo en la fiesta</p>
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" id="prevBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="photo-item"><img src="" alt="Foto"></div>
+                    <div class="photo-item"><img src="" alt="Foto"></div>
+                    <div class="photo-item"><img src="" alt="Foto"></div>
+                    <div class="photo-item"><img src="" alt="Foto"></div>
+                    <div class="photo-item"><img src="" alt="Foto"></div>
+                </div>
+            </div>
+
+            <button class="carousel-btn next-btn" id="nextBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <section class="seccion-galeria">
+        <div class="intro-texto scroll-reveal">
+            <h2>Sube tus fotos</h2>
+            <p>Ayúdanos a completar el álbum</p>
+        </div>
+        <div class="grid-categorias">
+            
+            <div class="card-categoria scroll-reveal" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('img/reg.jpg');">
+                <h3>Registro Civil</h3>
+                <p>El momento del "Sí, quiero"</p>
+                <button class="btn-accion" onclick="activarInput('inputCivil')">Subir Foto</button>
+                <input type="file" id="inputCivil" hidden accept="image/*" onchange="subirFoto(this, ids.CIVIL)">
+            </div>
+
+            <div class="card-categoria scroll-reveal" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('img/fies.jpg');">
+                <h3>La Fiesta</h3>
+                <p>¡A bailar hasta el amanecer!</p>
+                <button class="btn-accion" onclick="activarInput('inputFiesta')">Subir Foto</button>
+                <input type="file" id="inputFiesta" hidden accept="image/*" onchange="subirFoto(this, ids.FIESTA)">
+            </div>
+
+            <div class="card-categoria scroll-reveal" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('img/sel.jpg');">
+                <h3>Selfies y Grupo</h3>
+                <p>Tu sonrisa junto a la nuestra</p>
+                <button class="btn-accion" onclick="activarInput('inputSelfies')">Subir Foto</button>
+                <input type="file" id="inputSelfies" hidden accept="image/*" onchange="subirFoto(this, ids.SELFIES)">
+            </div>
+
+            <div class="card-categoria scroll-reveal" 
+                 style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('img/vid.jpg');">
+                <h3>Videos</h3>
+                <p>Captura el movimiento</p>
+                <a href="https://drive.google.com/drive/folders/15gOtiz7acDxaFt1NUMp8Gdazkbyo4h_U?usp=drive_link" target="_blank" class="btn-accion">
+                    Subir Video
+                </a>
+            </div>
+
+        </div>
+
+        <div id="statusMessage" class="status-box"></div>
+    </section>
+
+    <section class="seccion-final">
+        <a href="https://drive.google.com/drive/folders/1wNCv9PM1fcQ3LrXnd_qrUZHRTg0EF8yE?usp=drive_link" target="_blank" class="btn-accion btn-grande">
+            Ver Álbum Completo
+        </a>
+    </section>
+
+    <script>
+        /* --- 1. CONFIGURACIÓN --- */
+        const URL_API = "https://script.google.com/macros/s/AKfycbz1QEnH2YDDwxUeq1uL7q4MN9kFODKDBd3gZYl3CLahLPMR6Cb63UpRq4RvmTMQgcNK/exec"; 
+
+        const ids = {
+            CIVIL:   "1nEqaOv0HC2U2yR0Ie4Xj6DXHJ6VYqsCd",
+            FIESTA:  "1xWzZCLCfG5CRMAa14UhAdWeqdS7jiCOd",
+            SELFIES: "1sOUxzILx0B_Ncdrxf7z1kepJKV5CWPad", 
+        };
+
+        /* --- 2. SUBIDA DE FOTOS Y RECARGA --- */
+        function activarInput(idInput) { document.getElementById(idInput).click(); }
+
+        async function subirFoto(input, idCarpetaDestino) {
+            const archivo = input.files[0];
+            if (!archivo) return;
+            if (!archivo.type.startsWith('image/')) { mostrarEstado("⚠️ Solo imágenes.", "error"); return; }
+
+            mostrarEstado("⏳ Subiendo...", "neutro");
+            const reader = new FileReader();
+            reader.readAsDataURL(archivo);
+            
+            reader.onload = async function() {
+                try {
+                    const respuesta = await fetch(URL_API, {
+                        method: "POST",
+                        body: JSON.stringify({
+                            imagen: reader.result,
+                            tipo: archivo.type,
+                            nombre: archivo.name,
+                            idCarpeta: idCarpetaDestino 
+                        })
+                    });
+                    const datos = await respuesta.json();
+                    
+                    if (datos.status === "success") {
+                        mostrarEstado("✅ ¡Listo! Actualizando galería...", "exito");
+                        // Recargar página para ver cambios
+                        setTimeout(() => {
+                            window.location.reload(); 
+                        }, 2500);
+                    } else { mostrarEstado("❌ Error.", "error"); }
+                } catch (e) { mostrarEstado("❌ Error conexión.", "error"); }
+            };
+            input.value = ''; 
+        }
+
+        function mostrarEstado(mensaje, tipo) {
+            const box = document.getElementById('statusMessage');
+            box.innerText = mensaje;
+            box.style.display = 'block';
+            box.style.color = (tipo === 'exito') ? 'green' : (tipo === 'error' ? 'red' : '#bfa373');
+            if(tipo !== 'exito') setTimeout(() => { box.innerText = ""; }, 5000);
+        }
+
+        /* --- 3. CARRUSEL (TODAS LAS CARPETAS) --- */
+        let currentSlide = 0;
+        let autoPlayTimer; 
+        const track = document.getElementById('carouselTrack');
+        
+        async function cargarCarrusel() {
+            try {
+                // Pedimos las 3 carpetas a la vez
+                const promesas = [
+                    fetch(`${URL_API}?id=${ids.CIVIL}`),
+                    fetch(`${URL_API}?id=${ids.FIESTA}`),
+                    fetch(`${URL_API}?id=${ids.SELFIES}`)
+                ];
+
+                const respuestas = await Promise.all(promesas);
+                const fotosCivil = await respuestas[0].json();
+                const fotosFiesta = await respuestas[1].json();
+                const fotosSelfies = await respuestas[2].json();
+
+                // Unimos todo en una sola lista
+                const todasLasFotos = [...fotosCivil, ...fotosFiesta, ...fotosSelfies];
+                
+                if (todasLasFotos && todasLasFotos.length > 0) {
+                    track.innerHTML = ""; 
+                    todasLasFotos.forEach(url => {
+                        const div = document.createElement('div');
+                        div.className = 'photo-item';
+                        div.innerHTML = `<img src="${url}" alt="Recuerdo" loading="lazy">`;
+                        track.appendChild(div);
+                    });
+                    currentSlide = 0;
+                    updateCarousel();
+                }
+            } catch (e) { 
+                console.log("Usando fotos de ejemplo (API no lista).");
+            }
+            startAutoPlay();
+        }
+
+        function updateCarousel() {
+            const items = document.querySelectorAll('.photo-item');
+            if (items.length === 0) return;
+            const screenWidth = window.innerWidth;
+            const itemsVisible = screenWidth < 768 ? 1 : 3; 
+            const maxSlide = items.length - itemsVisible;
+
+            if (currentSlide > maxSlide) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = maxSlide;
+
+            const itemWidth = 100 / itemsVisible; 
+            const movePercentage = currentSlide * itemWidth;
+            track.style.transform = `translateX(-${movePercentage}%)`;
+        }
+
+        function startAutoPlay() {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(() => { currentSlide++; updateCarousel(); }, 3000); 
+        }
+
+        function stopAutoPlay() { clearInterval(autoPlayTimer); }
+
+        const btnNext = document.getElementById('nextBtn');
+        const btnPrev = document.getElementById('prevBtn');
+
+        btnNext.addEventListener('click', () => { stopAutoPlay(); currentSlide++; updateCarousel(); setTimeout(startAutoPlay, 5000); });
+        btnPrev.addEventListener('click', () => { stopAutoPlay(); currentSlide--; updateCarousel(); setTimeout(startAutoPlay, 5000); });
+
+        const contenedorCarrusel = document.querySelector('.carousel-container');
+        contenedorCarrusel.addEventListener('mouseenter', stopAutoPlay);
+        contenedorCarrusel.addEventListener('mouseleave', startAutoPlay);
+
+        window.addEventListener('resize', updateCarousel);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarCarrusel();
+            const elementosAnimados = document.querySelectorAll('.scroll-reveal');
+            const checkScroll = () => {
+                const triggerBottom = window.innerHeight * 0.85;
+                elementosAnimados.forEach(elemento => {
+                    const boxTop = elemento.getBoundingClientRect().top;
+                    if (boxTop < triggerBottom) elemento.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
+

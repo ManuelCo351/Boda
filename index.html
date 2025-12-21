@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nos Casamos! - Teresa & Nicolas</title>
+    <link rel="stylesheet" href="estilo.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Parisienne&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div id="seccion-portada" class="contenedor">
+    <div class="card">
+        <div class="card-header"></div> 
+        <div class="card-body">
+            <img src="img/marcoImg.png" class="marco-interno" alt="marco decorativo">
+            <div class="ornament"></div>
+            
+            <h1 class="names">Teresa & Nicolas</h1>
+            
+            <div class="ornament2" onclick="masInfo()"></div>
+            
+            <p class="text-button">Tocá el adorno para ver los detalles</p>
+            <div class="separator-line"></div>
+            
+            <div class="date-time">
+                <span class="date">29 DE DICIEMBRE · 2025</span>
+                <span class="time">10:00 AM</span>
+            </div>
+            <p class="invite-text">
+                "Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora... Él hizo todo hermoso en su tiempo" 
+                <br>- Eclesiastes 3:1, 11.
+            </p>
+        </div> 
+    </div> 
+</div> 
+
+<div id="seccion-detalle" class="oculto">           
+    
+    <header>
+        <div class="menu-boda-pc">
+            <nav class="menu-principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#historia">Nuestra Historia</a>
+                <a href="#localizacion">¿Cómo llegar?</a>
+                <a href="#horarios">Horarios</a>
+                <a href="#contacto">Confirmación</a>
+            </nav>
+        </div>
+
+        <div class="menu-boda-movil">
+            <div class="burger-menu" id="burger_menu">
+                <i class="fa fa-bars" aria-hidden="true"></i> Menú
+            </div>
+            <div class="slideMenu" id="slideMenu">
+                <nav class="menu-principal">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#historia">Nuestra Historia</a>
+                    <a href="#localizacion">¿Cómo llegar?</a>
+                    <a href="#horarios">Horarios</a>
+                    <a href="#contacto">Confirmación</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="inicio-escaneo">
+        <div class="contenido-titulo">
+            <h2>Teresa & Nicolas</h2>
+            <p>29 . 12 . 2025</p>
+        </div>
+    </section>
+
+    <section id="historia" class="seccion-historia revelar">
+        <div class="titulo-seccion">
+            <h2>Nuestra Historia</h2>
+            <p>Pequeños momentos de una gran aventura</p>
+        </div>
+
+        <div class="galeria-grid">
+            <div class="photo-card-container" onclick="this.classList.toggle('is-flipped')">
+                <div class="photo-card">
+                    <div class="card-face face-front">
+                        <img src="img/historia1.jpg" alt="Foto novios 1">
+                        <div class="icono-toque">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-face face-back">
+                        <img src="img/historia1.jpg" alt="Fondo borroso" class="img-bg">
+                        <div class="contenido-back">
+                            <h3>¿Cómo comenzó todo?</h3>
+                            <p>"Cuando nos conocimos, no teníamos lujos. Como suele contar el abuelo entre risas, apenas tenía una muda de ropa y mucha esperanza..."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-card-container" onclick="this.classList.toggle('is-flipped')">
+                <div class="photo-card">
+                    <div class="card-face face-front">
+                        <img src="img/historia2.jpg" alt="Foto novios 2">
+                        <div class="icono-toque">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-face face-back">
+                        <img src="img/historia2.jpg" alt="Fondo borroso" class="img-bg">
+                        <div class="contenido-back">
+                            <h3>Lo más importante</h3>
+                            <p>"Nuestro mayor orgullo no son las cosas materiales, sino la familia que formamos. Unimos nuestros corazones para criar a nuestros hijos..."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-card-container" onclick="this.classList.toggle('is-flipped')">
+                <div class="photo-card">
+                    <div class="card-face face-front">
+                        <img src="img/historia3.jpg" alt="Foto novios 3">
+                        <div class="icono-toque">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-face face-back">
+                        <img src="img/historia3.jpg" alt="Fondo borroso" class="img-bg">
+                        <div class="contenido-back">
+                            <h3>Nuestro hogar</h3>
+                            <p>"Hoy, la casa de los abuelos es el refugio favorito de más de 30 nietos y una familia inmensa. Ustedes son nuestro pilar..."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-card-container" onclick="this.classList.toggle('is-flipped')">
+                <div class="photo-card">
+                    <div class="card-face face-front">
+                        <img src="img/historia4.jpg" alt="Foto novios 4">
+                        <div class="icono-toque">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-face face-back">
+                        <img src="img/historia4.jpg" alt="Fondo borroso" class="img-bg">
+                        <div class="contenido-back">
+                            <h3>Llegó el gran día...</h3>
+                            <p>"Y aquí estamos, 40 años después. Queremos celebrar que el amor ganó. Gracias por acompañarnos a decir 'sí' una vez más."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+    <section id="horarios" class="seccion-horarios revelar">
+        <div class="titulo-seccion">
+            <h2>Itinerario</h2>
+            <p>Los momentos claves de nuestro gran día</p>
+        </div>
+
+        <div class="timeline">
+            <div class="evento">
+                <div class="hora">10:00 hs</div>
+                <div class="icono-timeline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </div>
+                <div class="info-evento">
+                    <h3>Registro Civil</h3>
+                    <p>Av. Chaco 549</p>
+                </div>
+            </div>
+
+            <div class="evento">
+                <div class="hora">12:00 hs</div>
+                <div class="icono-timeline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"></path><path d="M12 21v-8"></path><path d="M6 6h12l-1.5 5.2a3 3 0 0 1-2.9 2.2H8.4a3 3 0 0 1-2.9-2.2L4 6z"></path></svg>
+                </div>
+                <div class="info-evento">
+                    <h3>Recepción & Fiesta</h3>
+                    <p>Catamarca 561</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dress-code-box">
+            <div class="icono-dress">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-1.1 0-2 .9-2 2 0 .7.4 1.4 1 1.7V7h-4c-1.1 0-2 .9-2 2v3h14V9c0-1.1-.9-2-2-2h-4V5.7c.6-.3 1-1 1-1.7 0-1.1-.9-2-2-2z"></path><path d="M4 12v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7"></path></svg>
+            </div>
+            <h3>Código de Vestimenta</h3>
+            <p class="estilo">ELEGANTE SPORT</p>
+            <p class="nota">Queremos verlos elegantes pero cómodos. Les pedimos acompañarnos vistiendo tonos claros y suaves (beige, crema, pasteles). Se ruega no asistir de blanco, negro o rojo.</p>
+        </div>
+    </section>
+
+    <section id="localizacion" class="seccion-boda revelar">
+        <div class="container">
+            <div class="titulo-seccion">
+                <h2>¿Cómo llegar?</h2>
+                <p>Te esperamos para celebrar juntos este gran momento.</p>
+            </div>
+
+            <div class="contenedor-menu">
+                <ul id="encabezado_menu" class="encabezado">
+                    <li class="active"><a href="#ceremonia">Ceremonia</a></li>
+                    <li><a href="#fiesta">Fiesta</a></li>
+                </ul>
+
+                <div class="contenido" id="loc_menu">
+                    <div id="ceremonia" class="active">
+                        <div class="mapa-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0120327121444!2d-60.226807125278654!3d-26.871358791475846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9446c9c29a3860dd%3A0x17b459e2e79348a0!2sAv.%20Chaco%20549%2C%20H3530%20Quitilipi%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1765242395055!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/6rMVxMNxwjSLshCh9" target="_blank" class="boton-llegar">Abrir en GPS (Ceremonia)</a>
+                    </div>
+
+                    <div id="fiesta">
+                        <div class="mapa-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.9095870574984!2d-60.22071992527851!3d-26.87461349161164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9446c9dbf5064f61%3A0xc11e6fcf5d07c21a!2sCatamarca%20561%2C%20H3530%20Quitilipi%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1764788419643!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <a href="https://maps.app.goo.gl/skz9wdENZy1HKVFP8" target="_blank" class="boton-llegar">Abrir en GPS (Fiesta)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-extras revelar">
+        <div class="titulo-final">
+            <h2>Confirmación & Detalles</h2>
+            <p>Ayúdanos a organizar la fiesta perfecta</p>
+        </div>
+
+        <div class="contenedor-cards">
+            <div class="card-extra">
+                <div class="icono-extra">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </div>
+                <h3>Confirmar Asistencia</h3>
+                <p>¡Los esperamos a todos! Por favor, confirmen su asistencia.</p>
+                <a href="https://wa.me/5492974089612?text=Hola!%20Quiero%20confirmar%20mi%20asistencia" target="_blank" class="btn-accion">Enviar Mensaje</a>
+            </div>
+
+            <div class="card-extra">
+                <div class="icono-extra">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                </div>
+                <h3>Sugerir Canciones</h3>
+                <p>¿Qué tema no puede faltar en la fiesta? ¡Dinos cuál!</p>
+                <a href="https://forms.gle/aF2NUfHZuKxGDKAK6" target="_blank" class="btn-accion">Proponer Música</a>
+            </div>
+
+            <div class="card-extra">
+                <div class="icono-extra">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                </div>
+                <h3>Compartir Fotos</h3>
+                <p>Sube aquí todas las fotos que tomes durante la celebración.</p>
+                <a href="galeria.html"  class="btn-accion">Subir Fotos</a>
+            </div>
+        </div>
+    </section>
+>
+
+</div>
+    <div class="contador">
+        <div class="contacion">Faltan:</div>
+        <div class="cont">
+            <div><span id="dias">00</span><p>Días</p></div>
+            <div><span id="horas">00</span><p>Horas</p></div>
+            <div><span id="minutos">00</span><p>Min</p></div>
+            <div><span id="segundos">00</span><p>Seg</p></div>
+        </div>
+    </div> <audio id="musica" loop>
+    <source src="img/videoplayback.weba" type="audio/mpeg">
+</audio>
+
+<div id="btn-musica" class="caja-musica" onclick="controlarMusica()">
+    <div id="icono-musica">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

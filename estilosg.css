@@ -1,0 +1,399 @@
+/* ========================================= */
+/* 1. VARIABLES (CONFIGURACIÓN REUTILIZABLE) */
+/* ========================================= */
+:root {
+    /* --- PALETA DE COLORES --- */
+    /* ¡Cambia estos 3 códigos y toda la web cambia de color! */
+    --color-principal: #bfa373;       /* Dorado elegante */
+    --color-principal-oscuro: #8c734b; /* Dorado más oscuro (al pasar mouse) */
+    --color-texto: #4a4a4a;           /* Gris oscuro general */
+    --color-fondo-body: #f9f8f6;      /* "Papel" cálido */
+    --color-blanco: #ffffff;
+    
+    /* --- TIPOGRAFÍA --- */
+    --fuente-titulos: 'Great Vibes', cursive;
+    --fuente-subtitulos: 'Cinzel', serif;
+    --fuente-texto: 'Lato', sans-serif;
+
+    /* --- EFECTOS --- */
+    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --sombra-hover: 0 20px 40px rgba(0,0,0,0.4); 
+    --radio-borde: 15px;
+    --transicion: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ========================================= */
+/* 2. RESET Y BASES GLOBALES                 */
+/* ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo-body);
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================= */
+/* 3. BOTÓN FLOTANTE "VOLVER" (NUEVO)        */
+/* ========================================= */
+.btn-volver-flotante {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Siempre encima de todo */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--color-principal);
+    font-weight: bold;
+    font-family: var(--fuente-texto);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    transition: var(--transicion);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.btn-volver-flotante:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* 4. HEADER (PORTADA)                       */
+/* ========================================= */
+.galeria-cover {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-portada {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    animation: zoomIn 20s infinite alternate;
+}
+
+.galeria-cover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    z-index: 2;
+}
+
+.cover-overlay {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: var(--color-blanco);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.titulo-elegante {
+    font-family: var(--fuente-titulos);
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.subtitulo-elegante {
+    font-family: var(--fuente-subtitulos);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ========================================= */
+/* 5. SECCIONES Y TEXTOS                     */
+/* ========================================= */
+.seccion-galeria, .seccion-carrusel, .seccion-final {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-texto {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro-texto h2 {
+    font-family: var(--fuente-subtitulos);
+    color: var(--color-principal);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro-texto p {
+    color: #888;
+    font-style: italic;
+}
+
+/* ========================================= */
+/* 6. GRID DE CATEGORÍAS (TARJETAS MODERNAS) */
+/* ========================================= */
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 30px;
+}
+
+.card-categoria {
+    /* Estructura */
+    height: 250px;
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    position: relative;
+    border: none;
+    
+    /* Alineación */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Efectos */
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Títulos dentro de la tarjeta (BLANCOS) */
+.card-categoria h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: var(--fuente-titulos);
+    margin-bottom: 5px;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Clave para leerse */
+}
+
+/* Párrafos dentro de la tarjeta (BLANCOS) */
+.card-categoria p {
+    color: #f0f0f0;
+    font-size: 0.95rem;
+    z-index: 2;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    font-weight: 500;
+}
+
+/* === HOVER EFFECT (ELEVACIÓN + BORDE DORADO) === */
+.card-categoria:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 2px var(--color-principal); 
+}
+
+/* ========================================= */
+/* 7. BOTONES                                */
+/* ========================================= */
+
+/* Botón General */
+.btn-accion {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid var(--color-principal);
+    background-color: transparent;
+    color: var(--color-principal);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.btn-accion:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    box-shadow: 0 5px 15px rgba(191, 163, 115, 0.4);
+}
+
+/* Botón ESPECÍFICO DENTRO DE LAS TARJETAS (Efecto Vidrio) */
+.card-categoria .btn-accion {
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid #fff;
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+/* Hover del botón dentro de la tarjeta */
+.card-categoria .btn-accion:hover, 
+.card-categoria:hover .btn-accion { 
+    background-color: var(--color-principal);
+    color: white;
+    border-color: var(--color-principal);
+}
+
+/* ========================================= */
+/* 8. CARRUSEL                               */
+/* ========================================= */
+.seccion-carrusel {
+    background-color: var(--color-blanco);
+    width: 100%;
+    /* Ajustes especiales para que quede bien pegado a la portada */
+    padding-top: 40px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.photo-item {
+    flex: 0 0 33.333%; /* 3 fotos por vista en PC */
+    padding: 5px;
+    height: 300px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.photo-item:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Flechas del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border: none;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: var(--color-principal);
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transicion);
+    display: flex; justify-content: center; align-items: center;
+}
+
+.carousel-btn:hover {
+    background: var(--color-principal);
+    color: white;
+}
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* ========================================= */
+/* 9. FOOTER Y STATUS                        */
+/* ========================================= */
+.seccion-final {
+    text-align: center;
+    background-color: var(--color-fondo-body);
+    padding-bottom: 100px;
+}
+
+.btn-grande {
+    padding: 15px 40px;
+    font-size: 1rem;
+}
+
+.status-box {
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--color-principal);
+    min-height: 20px;
+    text-align: center;
+}
+
+/* ========================================= */
+/* 10. ANIMACIONES                           */
+/* ========================================= */
+
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Clase para Scroll Reveal */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================= */
+/* 11. RESPONSIVE (MÓVIL)                    */
+/* ========================================= */
+@media (max-width: 768px) {
+    .titulo-elegante { font-size: 3rem; }
+    
+    .carousel-container { padding: 0; }
+    .carousel-btn { width: 40px; height: 40px; }
+    
+    /* En móvil mostramos 1 foto grande */
+    .photo-item { flex: 0 0 100%; height: 350px; }
+    
+    .grid-categorias {
+        gap: 20px;
+    }
+}
+        }
+        
