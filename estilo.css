@@ -136,21 +136,23 @@ body {
 
 @media (max-width: 600px) {
     .card-header {
-        /* Asegura que se vean las caras en el celular */
-        background-position: center; 
+        /* 1. Forzamos a que se pegue al borde superior de la foto */
+        background-position: center top !important; 
         
-        /* Ajustamos el alto para que la tarjeta no sea eterna en móvil */
-        height: 55vh; 
+        /* 2. Le damos más altura para que quepan las cabezas y el torso */
+        height: 380px !important; 
         
-        /* Evitamos que cualquier posición 'fixed' rompa el encuadre */
-        position: relative; 
+        /* 3. Aseguramos que la imagen cubra todo el espacio */
+        background-size: cover;
+        position: relative;
     }
 
     .card {
-        width: 95%; /* Un poquito más ancha en móvil para aprovechar espacio */
-        margin-top: 10px;
+        /* Un pequeño margen arriba para que no pegue al borde del cel */
+        margin-top: 15px; 
     }
 }
+
 
 .marco-interno {
     position: absolute;
@@ -1102,6 +1104,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
