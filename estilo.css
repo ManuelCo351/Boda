@@ -79,19 +79,14 @@ body {
     width: 100%;
     height: 100dvh; 
     z-index: 1000;
-    overflow-y: auto; /* Mantenemos el scroll */
+    overflow-y: auto; /* Permite bajar para ver los nombres y el botón */
     overflow-x: hidden;
-    
-    /* Si quieres que el fondo sea la foto completa: */
-    background-image: var(--gradiente-fondo); 
-    background-size: cover;
-    background-position: center;
-    
+    background-image: var(--gradiente-fondo); /* El fondo rosa suave */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0; /* Espacio para que la tarjeta no pegue arriba/abajo */
 }
+
 
 .oculto {
     display: none !important;
@@ -120,26 +115,6 @@ body {
     position: relative;
 }
 
-.card-header {
-    height: 600px;
-    width: 100%;
-    background-image: var(--img-header-portada;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh; /* Usamos dvh para que se adapte al navegador móvil */
-    z-index: 1000;
-    overflow-y: auto; /* <--- CAMBIO CLAVE: Permite scrolear dentro de la portada si el contenido es largo */
-    overflow-x: hidden;
-    background-image: var(--gradiente-fondo); /* Asegura que el fondo cubra todo el scroll */
-}
-header-portada); 
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    z-index: 0;
-}
 
 .card-body {
     position: relative;
@@ -149,7 +124,15 @@ header-portada);
     margin-top: -80px; 
     z-index: 10;
 }
-
+.card-header {
+    height: 600px; /* O el alto que prefieras */
+    width: 100%;
+    background-image: var(--img-header-portada); /* ¡Asegúrate de cerrar el paréntesis! */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Cambiado de fixed a relative */
+    z-index: 1;
+}
 .marco-interno {
     position: absolute;
     top: 0;
@@ -1100,6 +1083,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
