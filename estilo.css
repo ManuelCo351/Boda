@@ -105,7 +105,7 @@
     text-shadow: 0 4px 15px rgba(0,0,0,0.9); /* Sombra intensa para legibilidad */
     font-size: clamp(3rem, 15vw, 5.5rem) !important;
     line-height: 1.1;
-    margin-top: 5vh; /* Bajamos los nombres para que no peguen arriba */
+    margin-top: 2vh; /* Bajamos los nombres para que no peguen arriba */
     margin-bottom: 10px;
 }
 
@@ -116,7 +116,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .date, .time {
@@ -128,7 +128,7 @@
 .ornament2 {
     width: 110px;
     height: 110px;
-    margin: 30px auto;
+    margin: 15px auto;
     cursor: pointer;
     background-image: var(--img-adorno-click);
     background-size: contain;
@@ -147,7 +147,7 @@
     line-height: 1.6;
     letter-spacing: 2px;
     max-width: 85%;
-    margin: 20px auto;
+    margin: 10px auto;
     text-transform: uppercase;
     text-shadow: 1px 1px 6px rgba(0,0,0,1); /* Sombra negra fuerte */
 }
@@ -157,7 +157,7 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 
@@ -1021,6 +1021,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
