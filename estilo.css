@@ -194,6 +194,7 @@ header .menu-boda-pc .menu-principal a:hover {
 }
 
 header .menu-boda-movil {
+   position: fixed;
     background: var(--white);
     width: 100%;
     position: fixed;
@@ -1019,6 +1020,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
