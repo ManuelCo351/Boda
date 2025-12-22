@@ -148,7 +148,7 @@ body {
 
     .card {
         width: 95%; /* Un poquito más ancha en móvil para aprovechar espacio */
-        margin-top: 30px;
+        margin-top: 10px;
     }
 }
 
@@ -1102,6 +1102,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
