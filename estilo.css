@@ -432,7 +432,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
-.contenido-titulo h1 {
+.contenido-titulo h2 {
     font-family: var(--fuente-titulos);
     font-size: 4rem;
     margin: 0;
@@ -1019,6 +1019,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
