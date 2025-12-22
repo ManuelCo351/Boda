@@ -129,7 +129,7 @@ body {
     width: 100%;
     background-image: var(--img-header-portada); /* ¡Asegúrate de cerrar el paréntesis! */
     background-size: cover;
-    background-position: center top;
+    background-position: center top !important;
     position: relative; /* Cambiado de fixed a relative */
     z-index: 1;
 }
@@ -1083,6 +1083,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
