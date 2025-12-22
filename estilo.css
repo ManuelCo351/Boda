@@ -137,10 +137,10 @@ body {
 @media (max-width: 600px) {
     .card-header {
         /* Asegura que se vean las caras en el celular */
-        background-position: center top !important; 
+        background-position: center; 
         
         /* Ajustamos el alto para que la tarjeta no sea eterna en móvil */
-        height: 80vh; 
+        height: 55vh; 
         
         /* Evitamos que cualquier posición 'fixed' rompa el encuadre */
         position: relative; 
@@ -1102,6 +1102,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
