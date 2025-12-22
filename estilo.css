@@ -140,7 +140,7 @@ body {
         background-position: center top !important; 
         
         /* Ajustamos el alto para que la tarjeta no sea eterna en móvil */
-        height: 55vh; 
+        height: 80vh; 
         
         /* Evitamos que cualquier posición 'fixed' rompa el encuadre */
         position: relative; 
@@ -1102,6 +1102,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
