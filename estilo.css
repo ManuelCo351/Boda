@@ -131,7 +131,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative; /* Cambiado de fixed a relative */
-    z-index: 199999;
+    z-index: 1;
 }
 .marco-interno {
     position: absolute;
@@ -1083,6 +1083,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
