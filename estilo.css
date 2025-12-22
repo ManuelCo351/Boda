@@ -72,6 +72,26 @@ body {
     overflow: visible !important; /* Deja que el scroll pase al body */
     position: relative;
 }
+#seccion-portada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh; 
+    z-index: 1000;
+    overflow-y: auto; /* Mantenemos el scroll */
+    overflow-x: hidden;
+    
+    /* Si quieres que el fondo sea la foto completa: */
+    background-image: var(--gradiente-fondo); 
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; /* Espacio para que la tarjeta no pegue arriba/abajo */
+}
 
 .oculto {
     display: none !important;
@@ -1080,6 +1100,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
