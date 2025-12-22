@@ -105,7 +105,7 @@
     text-shadow: 0 4px 15px rgba(0,0,0,0.9); /* Sombra intensa para legibilidad */
     font-size: clamp(3rem, 15vw, 5.5rem) !important;
     line-height: 1.1;
-    margin-top: 12vh; /* Bajamos los nombres para que no peguen arriba */
+    margin-top: 5vh; /* Bajamos los nombres para que no peguen arriba */
     margin-bottom: 10px;
 }
 
@@ -1021,6 +1021,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
