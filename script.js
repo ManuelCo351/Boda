@@ -53,7 +53,7 @@ function masInfo() {
         // Bloqueamos todo antes de empezar
         document.documentElement.style.overflowY = "hidden";
         document.body.style.overflowY = "hidden";
-
+document.getElementById("btn-musica").style.display = "flex";
         portada.classList.add('portada-salida');
 
         setTimeout(function() {
@@ -219,4 +219,5 @@ document.addEventListener("DOMContentLoaded", function() {
         // Le decimos al observador que la vigile
         observadorFotos.observe(foto);
     });
+
 });
