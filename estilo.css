@@ -103,7 +103,7 @@ body {
 .card-header {
     height: 600px;
     width: 100%;
-    background-image: var(--img-#seccion-portada {
+    background-image: var(--img-header-portada;
     position: fixed;
     top: 0;
     left: 0;
@@ -1080,3 +1080,4 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
