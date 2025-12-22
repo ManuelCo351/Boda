@@ -137,7 +137,7 @@ body {
 @media (max-width: 600px) {
     .card-header {
         /* 1. Forzamos a que se pegue al borde superior de la foto */
-        background-position: center top !important; 
+      
         
         /* 2. Le damos más altura para que quepan las cabezas y el torso */
         height: 600px !important; 
@@ -1104,6 +1104,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
