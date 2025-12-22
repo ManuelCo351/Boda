@@ -140,7 +140,7 @@ body {
         background-position: center top !important; 
         
         /* 2. Le damos más altura para que quepan las cabezas y el torso */
-        height: 380px !important; 
+        height: 600px !important; 
         
         /* 3. Aseguramos que la imagen cubra todo el espacio */
         background-size: cover;
@@ -1104,6 +1104,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
