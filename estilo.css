@@ -38,9 +38,8 @@
     box-sizing: border-box;
 }
 
-
 /* ==========================================================================
-   3. SECCIÓN PORTADA (DISEÑO LIMPIO FULL SCREEN)
+   3. SECCIÓN PORTADA (ESTILO FULL SCREEN - DISTRIBUCIÓN FINAL)
    ========================================================================== */
 
 #seccion-portada {
@@ -52,32 +51,34 @@
     z-index: 1000;
     overflow: hidden;
     
-    /* FILTRO OSCURO + IMAGEN DE FONDO */
-    /* El 0.6 es la oscuridad. Aumenta a 0.7 si quieres más contraste. */
+    /* Filtro oscuro + Imagen de fondo */
+    /* El 0.6 regula la oscuridad para que el texto resalte */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 var(--img-header-portada);
     background-size: cover;
-    background-position: center top; /* Caras de los novios siempre visibles */
+    background-position: center top; /* Mantiene las caras visibles arriba */
     
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea al inicio para controlar con márgenes */
     align-items: center;
     transition: var(--transicion);
+    padding-top: 10vh; /* Baja los nombres un poco del borde superior */
 }
 
-/* --- IMPORTANTE: OCULTAR ELEMENTOS VIEJOS --- */
-/* Esto elimina el "coso de arriba", el marco, la onda blanca, etc. */
+/* --- LIMPIEZA DE ELEMENTOS ANTERIORES --- */
+/* Ocultamos todo lo que pertenecía al diseño de tarjeta blanca */
 .card-header, 
 .card-body::before, 
 .marco-interno, 
 .separator-line, 
-.ornament, 
+.ornament,
 .card::before,
 .card::after {
     display: none !important;
 }
 
-/* La tarjeta ahora es invisible y solo contiene el texto */
+/* El contenedor de la tarjeta ahora es invisible */
 .card {
     background: transparent !important;
     box-shadow: none !important;
@@ -88,7 +89,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 !important; /* Quitamos padding para que no haya espacios raros */
 }
 
 .card-body {
@@ -98,67 +98,19 @@
     width: 100%;
 }
 
-/* --- ESTILOS DEL TEXTO Y ADORNO --- */
+/* --- ESTILOS DE TEXTO --- */
+
 .names {
     font-family: var(--fuente-titulos);
-    color: var(--gold) !important; /* Blanco para que resalte */
-    text-shadow: 0 4px 15px rgba(0,0,0,0.9); /* Sombra intensa para legibilidad */
+    color: var(--gold) !important;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
     font-size: clamp(3rem, 15vw, 5.5rem) !important;
     line-height: 1.1;
-    margin-top: 2vh; /* Bajamos los nombres para que no peguen arriba */
-    margin-bottom: 10px;
+    /* Este margen crea el espacio entre nombres y el adorno */
+    margin: 0 0 12vh 0; 
 }
 
-.date-time {
-    color: var(--gold) !important; /* Dorado para la fecha */
-    font-family: var(--fuente-subtitulos);
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-    margin: 10px 0;
-}
-
-.date, .time {
-    display: inline-block;
-    color: #ffffff !important; /* Los datos concretos en blanco */
-}
-
-/* El adorno (Botón) en el centro */
-.ornament2 {
-    width: 110px;
-    height: 110px;
-    margin: 15px auto;
-    cursor: pointer;
-    background-image: var(--img-adorno-click);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: brightness(1.2) drop-shadow(0 0 15px rgba(255,255,255,0.5));
-    animation: palpito 2s infinite;
-    transition: transform 0.3s ease;
-    z-index: 10;
-}
-
-.invite-text {
-   font-family: var(--fuente-texto);
-    color: rgba(255, 255, 255, 0.95) !important; /* Texto casi blanco */
-    font-size: 0.9rem;
-    line-height: 1.6;
-    letter-spacing: 2px;
-    max-width: 85%;
-    margin: 10px auto;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 6px rgba(0,0,0,1); /* Sombra negra fuerte */
-}
-
-.text-button {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 5px;
-}
+/* El adorno dorado (Bot
 
 
 /* ==========================================================================
@@ -1021,6 +973,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
