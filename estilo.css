@@ -102,7 +102,7 @@
 
 .names {
     font-family: var(--fuente-titulos);
-    color: #ffffff !important;
+    color: var(--gold) !important;
     text-shadow: 0 4px 15px rgba(0,0,0,0.9);
     font-size: clamp(3rem, 15vw, 5.5rem) !important;
     line-height: 1.1;
@@ -1019,6 +1019,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
