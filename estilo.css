@@ -14,31 +14,7 @@
     /* --- FUENTES --- */
     --fuente-titulos: 'Parisienne', cursive;
     --fuente-subtitulos: 'Cormorant Garamond', serif;
-    --fuente-texto: 'Raleway', sans-serif;
-
-    /* --- IMÁGENES (Rutas centralizadas) --- */
-    --img-header-portada: url('img/fotocompleta.png');
-    --img-adorno-click: url('img/adorno1.png');
-    --img-scanner-fondo: url('img/fotoInicio.jpg');
-    --img-scanner-haz: url('img/fotoInicio1.jpg');
-
-    /* --- GRADIENTES Y EFECTOS --- */
-    --gradiente-fondo: linear-gradient(to right, var(--bg-pink-light), var(--bg-white-soft), var(--bg-pink-light));
-    --sombra-card: 0 15px 35px rgba(0,0,0,0.2);
-    --transicion: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* ==========================================================================
-   2. ESTILOS BASE Y RESET
-   ========================================================================== */
-* {
-    touch-action: pan-y; 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ==========================================================================
+    --fuente-texto: 'Raleway', sans-serif/* ==========================================================================
    3. SECCIÓN PORTADA (ESTILO FULL SCREEN - DISTRIBUCIÓN FINAL)
    ========================================================================== */
 
@@ -102,7 +78,7 @@
 
 .names {
     font-family: var(--fuente-titulos);
-    color: var(--gold) !important;
+    color: #ffffff !important;
     text-shadow: 0 4px 15px rgba(0,0,0,0.9);
     font-size: clamp(3rem, 15vw, 5.5rem) !important;
     line-height: 1.1;
@@ -110,7 +86,83 @@
     margin: 0 0 12vh 0; 
 }
 
-/* El adorno dorado (Bot
+/* El adorno dorado (Botón de entrada) */
+.ornament2 {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 3vh auto; /* Espacio antes de la fecha */
+    cursor: pointer;
+    background-image: var(--img-adorno-click);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(255,255,255,0.5));
+    animation: palpito 2s infinite;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.date-time {
+    color: var(--gold) !important;
+    font-family: var(--fuente-subtitulos);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 20px;
+}
+
+/* La cita bíblica (Eclesiastés) */
+.invite-text {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    max-width: 85%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 6px rgba(0,0,0,1);
+}
+
+/* Pequeña instrucción debajo del adorno */
+.text-button {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Animación de latido para el adorno */
+@keyframes palpito {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+;
+
+    /* --- IMÁGENES (Rutas centralizadas) --- */
+    --img-header-portada: url('img/fotocompleta.png');
+    --img-adorno-click: url('img/adorno1.png');
+    --img-scanner-fondo: url('img/fotoInicio.jpg');
+    --img-scanner-haz: url('img/fotoInicio1.jpg');
+
+    /* --- GRADIENTES Y EFECTOS --- */
+    --gradiente-fondo: linear-gradient(to right, var(--bg-pink-light), var(--bg-white-soft), var(--bg-pink-light));
+    --sombra-card: 0 15px 35px rgba(0,0,0,0.2);
+    --transicion: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE Y RESET
+   ========================================================================== */
+* {
+    touch-action: pan-y; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 
 /* ==========================================================================
@@ -973,6 +1025,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
