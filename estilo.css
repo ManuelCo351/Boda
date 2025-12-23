@@ -14,7 +14,31 @@
     /* --- FUENTES --- */
     --fuente-titulos: 'Parisienne', cursive;
     --fuente-subtitulos: 'Cormorant Garamond', serif;
-    --fuente-texto: 'Raleway', sans-serif/* ==========================================================================
+    --fuente-texto: 'Raleway', sans-serif;
+
+    /* --- IMÁGENES (Rutas centralizadas) --- */
+    --img-header-portada: url('img/fotocompleta.png');
+    --img-adorno-click: url('img/adorno1.png');
+    --img-scanner-fondo: url('img/fotoInicio.jpg');
+    --img-scanner-haz: url('img/fotoInicio1.jpg');
+
+    /* --- GRADIENTES Y EFECTOS --- */
+    --gradiente-fondo: linear-gradient(to right, var(--bg-pink-light), var(--bg-white-soft), var(--bg-pink-light));
+    --sombra-card: 0 15px 35px rgba(0,0,0,0.2);
+    --transicion: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE Y RESET
+   ========================================================================== */
+* {
+    touch-action: pan-y; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
    3. SECCIÓN PORTADA (ESTILO FULL SCREEN - DISTRIBUCIÓN FINAL)
    ========================================================================== */
 
@@ -131,36 +155,6 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
-}
-
-/* Animación de latido para el adorno */
-@keyframes palpito {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
-}
-;
-
-    /* --- IMÁGENES (Rutas centralizadas) --- */
-    --img-header-portada: url('img/fotocompleta.png');
-    --img-adorno-click: url('img/adorno1.png');
-    --img-scanner-fondo: url('img/fotoInicio.jpg');
-    --img-scanner-haz: url('img/fotoInicio1.jpg');
-
-    /* --- GRADIENTES Y EFECTOS --- */
-    --gradiente-fondo: linear-gradient(to right, var(--bg-pink-light), var(--bg-white-soft), var(--bg-pink-light));
-    --sombra-card: 0 15px 35px rgba(0,0,0,0.2);
-    --transicion: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* ==========================================================================
-   2. ESTILOS BASE Y RESET
-   ========================================================================== */
-* {
-    touch-action: pan-y; 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 
@@ -1025,6 +1019,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     }
 
 }
+
 
 
 
