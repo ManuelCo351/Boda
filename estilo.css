@@ -249,7 +249,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    ========================================================================== */
 .seccion-historia {
     padding: 80px 20px;
-    background-color: var(--gradiente-fondo);
+    background: var(--gradiente-fondo);
     text-align: center;
 }
 
@@ -450,7 +450,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    ========================================================================== */
 .seccion-horarios {
     padding: 80px 20px;
-    background-color: var(--gradiente-fondo);
+    background: var(--gradiente-fondo);
     text-align: center;
 }
 
@@ -600,7 +600,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    8. SECCIÓN LOCALIZACIÓN (TABS MAPAS)
    ========================================================================== */
 .seccion-boda {padding: 60px 20px;
-    background-color: var(--gradiente-fondo);
+    background: var(--gradiente-fondo);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -713,7 +713,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    ========================================================================== */
 .seccion-extras {
     padding: 80px 20px;
-    background-color: var(--gradiente-fondo);
+    background: var(--gradiente-fondo);
     text-align: center;
 }
 
