@@ -163,7 +163,7 @@
    4. NAVEGACIÓN (PC Y MÓVIL)
    ========================================================================== */
 header .menu-boda-pc {
-    background: var(--white);
+    background: var(--gradiente-fondo);
     width: 100%;
     position: fixed;
     z-index: 99;
@@ -249,7 +249,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    ========================================================================== */
 .seccion-historia {
     padding: 80px 20px;
-    background-color: #fdfdfd;
+    background-color: var(--gradiente-fondo);
     text-align: center;
 }
 
@@ -450,7 +450,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    ========================================================================== */
 .seccion-horarios {
     padding: 80px 20px;
-    background-color: var(--white);
+    background-color: var(--gradiente-fondo);
     text-align: center;
 }
 
@@ -600,9 +600,8 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    8. SECCIÓN LOCALIZACIÓN (TABS MAPAS)
    ========================================================================== */
 .seccion-boda {padding: 60px 20px;
-    background-color: var(--white);
-    text-align: center; 
-    /* El flex-column + align-items center centra todos los bloques hijos */
+    background-color: var(--gradiente-fondo);
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -714,7 +713,7 @@ header .menu-boda-movil .slideMenu .menu-principal a {
    ========================================================================== */
 .seccion-extras {
     padding: 80px 20px;
-    background-color: #f9f9f9;
+    background-color: var(--gradiente-fondo);
     text-align: center;
 }
 
@@ -795,9 +794,6 @@ header .menu-boda-movil .slideMenu .menu-principal a {
     color: var(--white);
 }
 
-/* ==========================================================================
-   10. EL CONTADOR (FIJO Y HORIZONTAL)
-   ========================================================================== */
 /* ==========================================================================
    10. EL CONTADOR (ESTILO FLOTANTE Y FIJO)
    ========================================================================== */
