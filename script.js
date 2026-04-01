@@ -127,7 +127,7 @@ pestanas.forEach((pestana) => {
 // Lógica de cálculo: Se resta la fecha objetivo menos la fecha actual
 
 
-const fechaBoda = new Date("Dec 29, 2025 9:30:00").getTime();
+const fechaBoda = new Date("Dec 29, 2026 9:30:00").getTime();
 
 const diasSpan = document.getElementById("dias");
 const horasSpan = document.getElementById("horas");
