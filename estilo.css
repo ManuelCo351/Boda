@@ -17,7 +17,7 @@
     --fuente-texto: 'Raleway', sans-serif;
 
     /* --- IMÁGENES (Rutas centralizadas) --- */
-    --img-header-portada: url('img/fotocompleta.png');
+    --img-header-portada: url('img/fotocompleta.webp');
     --img-adorno-click: url('img/adorno1.png');
     --img-scanner-fondo: url('img/fotoInicio.jpg');
     --img-scanner-haz: url('img/fotoInicio1.jpg');
